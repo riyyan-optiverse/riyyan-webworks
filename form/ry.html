@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration Form</title>
+    <style>
+      .sur {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        margin-bottom: 13px;
+        padding: 8px 7px;
+      }
+      button {
+        cursor: pointer;
+        margin: 10px;
+        border-radius: 2px;
+        border: none;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 7px 7px;
+        background-color: blue;
+        color: #fff;
+      }
+      input {
+        border: none;
+        outline: none;
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <section
+      style="
+        text-align: center;
+        width: 500px;
+        padding: 20px;
+        margin: auto;
+        background-color: lightpink;
+      "
+    >
+      <h1 style="margin-bottom: 25px; margin-top: 10px">
+        Student Registration Form
+      </h1>
+      <form>
+        <div class="sur">
+          <label for="Name">Student Name:</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="First Name"
+          />
+          -
+          <input
+            type="text"
+            id="LastName"
+            name="LastName"
+            placeholder="Last Name"
+          />
+        </div>
+        <div class="sur">
+          <label for="Name">Father's Name:</label>
+          <input type="text" id="fatherName" name="fatherName" />
+        </div>
+        <div class="sur">
+          <label for="rollNumber">Roll Number:</label>
+          <input type="number" id="rollNumber" name="rollNumber" />
+        </div>
+        <div class="sur">
+          <label for="phone">Mobile No:</label>
+          <input type="text" size="1" value="+92" />
+          -
+          <input type="tel" id="phone" name="phone" />
+        </div>
+        <div class="sur">
+          <lable for="email">Email ID:</lable>
+          <input type="email" id="email" name="email" />
+        </div>
+        <div class="sur">
+          <lable for="password">Password:</lable>
+          <input type="password" id="password" name="password" />
+        </div>
+        <div class="sur">
+          <label for="name">Gender:</label>
+          <input type="radio" name="name" value="Male" /> Male
+          <input type="radio" name="name" value="Female" /> Female
+        </div>
+        <div class="sur">
+          <label for="dept">Department:</label>
+          <input type="checkbox" name="dept" value="CSE" /> CSE
+          <input type="checkbox" name="dept" value="IT" /> IT
+          <input type="checkbox" name="dept" value="ECE" /> ECE
+          <input type="checkbox" name="dept" value="Civil" /> Civil
+          <input type="checkbox" name="dept" value="Mech" /> Mech
+        </div>
+        <div class="sur">
+          <label for="photo">Student photo:</label>
+          <input type="file" name="photo" />
+        </div>
+        <div class="sur">
+          <label for="City">City:</label>
+          <input type="text" id="City" name="City" />
+        </div>
+        <div class="sur">
+          <label for="address">Address:</label>
+          <input type="text" name="address" />
+        </div>
+        <button type="submit">Register</button>
+      </form>
+    </section>
+  </body>
+</html>
