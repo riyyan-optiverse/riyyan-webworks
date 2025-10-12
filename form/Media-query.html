@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <style> 
+           .form_container {
+                  background-color:palegoldenrod;  
+                  padding: 18px;   
+                  border-radius:5px;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 20px;
+           }
+            .inner_container {  
+
+                    display:grid;
+                    grid-template-columns:repeat(2, 1fr);
+                    gap:20px;
+                   
+            }
+            button {
+                    cursor: pointer;
+                    margin:7px;
+                    border-radius:2px;
+                    border:none;
+                    font-size:16px;
+                    font-weight:400;
+                    padding:8px 8px;
+                    background-color: blue;
+                    color:#fff;
+            }
+            input {
+                    padding:7px 16px;
+                    border-radius:3px;
+                    border:none;
+                    outline:none;
+            }
+            @media screen and (max-width:800px){
+                    .form_container {
+                            background-color: paleturquoise;
+                    }
+                    .inner_container{
+                            grid-template-columns: 1fr;
+                    }
+
+            }
+
+    </style>
+</head>
+<body>
+      
+      <form class="form_container">
+        <h1 style="text-align: center;margin-bottom: 25px; margin-top: 10px;">Sign Up Form</h1>
+            <section class="inner_container">
+        <div style="display: flex; flex-direction: column; gap:12px;">
+             <label for="firstName">First Name</label>
+             <input type="text" name="firstName" />
+        </div>         
+         <div style="display: flex; flex-direction: column; gap:12px;">
+             <label for="lastName">Last Name</label>
+             <input type="text" name="lastName" />
+         </div>
+         <div style="display: flex; flex-direction: column; gap:12px;">
+             <label for="password">Password</label>
+             <input type="password" name="password" />
+          </div>
+          <div style="display: flex; flex-direction: column; gap:12px;">
+             <label for="confirmPassword">Confirm Password</label>
+             <input type="password" name="confirmPassword" />
+           </div>        
+                <div>
+                    <button type="submit">Sign Up</button>
+                 </div>
+            </section> 
+      </form>
+</body>
+</html>
