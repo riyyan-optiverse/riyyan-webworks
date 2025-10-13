@@ -25,11 +25,12 @@
                     margin:7px;
                     border-radius:2px;
                     border:none;
-                    font-size:16px;
-                    font-weight:400;
-                    padding:8px 8px;
+                    font-size:18px;
+                    font-weight:500;
+                    padding:11px 15px;
                     background-color: blue;
                     color:#fff;
+                    align-self:center;
             }
             input {
                     padding:7px 16px;
@@ -37,12 +38,15 @@
                     border:none;
                     outline:none;
             }
-            @media screen and (max-width:800px){
+            @media screen and (max-width:722px){
                     .form_container {
                             background-color: paleturquoise;
                     }
                     .inner_container{
                             grid-template-columns: 1fr;
+                    }
+                    button{
+                        align-self: baseline;
                     }
 
             }
@@ -70,10 +74,10 @@
              <label for="confirmPassword">Confirm Password</label>
              <input type="password" name="confirmPassword" />
            </div>        
-                <div>
-                    <button type="submit">Sign Up</button>
-                 </div>
             </section> 
+            
+         <button type="submit">Sign Up</button>
+             
       </form>
 </body>
 </html>
