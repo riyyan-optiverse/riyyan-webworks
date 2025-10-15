@@ -4,8 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Positions</title>
+    <style>
+    .relative {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  border: 3px solid green;
+} 
+
+.absolute {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid red;
+}
+</style> 
 </head>
 <body>
-    
+    <h2>Css</h2>
+
+<p>An element with position: absolute; is positioned relative to the nearest positioned ancestor:</p>
+
+    <div class="relative">relative;
+    <div class="absolute">absolute;</div>
+</div>
 </body>
 </html>
