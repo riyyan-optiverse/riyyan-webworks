@@ -7,14 +7,20 @@
     <title>Document</title>
     <style>
       .section_container {
-        width: 80%;
+        width: 90%;
         height: auto;
         margin: auto;
-        padding: 20px;
+        padding: 10px;
         border-radius: 5px;
         background-color: #f9f9f9;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
+      .div_card img {
+       width: 100%;
+       height: auto;
+       max-width: 120px;
+       object-fit: contain;
+    }
       .inner_container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -64,27 +70,25 @@
                     gap:10px;
               }
             } 
-      @media screen and (max-width:815px){
-              .inner_container {
-                    grid-template-columns: repeat(1, 1fr);
-              }
-              .div_card{
-                    grid-template-columns: repeat(4, 1fr);
-              }
-              .who_we_are {
-                    grid-template-columns: repeat(1, 1fr);
-              }
-              .Video_section{
-                    margin-top:20px;
-              }
-              .gallery_card {
-                    grid-template-columns: repeat(2, 1fr);
-              }
-      }
+      
+              
+      
             @media screen and (max-width:715px){
                     .div_card{
                           grid-template-columns: repeat(3, 1fr);
                     }                 
+                    .who_we_are {
+                    grid-template-columns: repeat(1, 1fr);
+              }
+                   .Video_section{
+                    margin-top:20px;
+              }
+                   .gallery_card {
+                    grid-template-columns: repeat(2, 1fr);
+              }
+               .inner_container {
+                    grid-template-columns: repeat(1, 1fr);
+              }
       }
             @media screen and (max-width:550px){
                     .gallery_card {
@@ -133,21 +137,19 @@
       
       <div class="div_card">
         
-          <img src="logo7.jpg" alt="Abbruch Icon" height="60px" width="140px" />
-          <img src="logo2.webp" alt="Umzugs Icon" height="60px" width="80px" />
-          <img src="logo3.jpg" alt="Fuchs Truck" height="60px" width="95px" />
-          <img src="logo4.jpg" alt="Maler Icon" height="60px" width="100px" />
+          <img src="logo7.jpg" alt="Abbruch Icon" />
+          <img src="logo2.webp" alt="Umzugs Icon"/>
+          <img src="logo3.jpg" alt="Fuchs Truck" />
+          <img src="logo4.jpg" alt="Maler Icon" />
           <img
             src="logo5.jpg"
             alt="Reinigungs Icon"
-            height="60px"
-            width="130px"
+           
           />
           <img
             src="logo6.png"
             alt="BROCKENHAUS Icon"
-            height="60px"
-            width="160px"
+          
           />
       </div>
       <div class="who_we_are">
