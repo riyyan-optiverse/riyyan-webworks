@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studant Registration Form</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      .apr {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <section
+      style="
+        background-color: cyan;
+        padding: 15px 20px;
+        width: 400px;
+        margin: auto;
+        text-align: center;
+        border-radius: 5px;
+        margin-top: 5px;
+      "
+    >
+      <h1 style="text-align: center; margin-bottom: 15px">Sign Up</h1>
+      <form>
+        <div class="apr">
+          <lable for="username">Username</lable>
+          <input
+            type="text"
+            id="Username"
+            name="username"
+            placeholder="Enter your name"
+          />
+        </div>
+        <div class="apr">
+          <lable for="password">Password</lable>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+          />
+        </div>
+        <button
+          style="padding: 5px 15px; margin: 5px; text-align: center"
+          type="submit"
+        >
+          Sign Up
+        </button>
+      </form>
+    </section>
+  </body>
+</html>
