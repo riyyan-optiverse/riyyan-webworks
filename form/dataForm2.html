@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+       
+
+    
+    .section_container {
+      width: 70%;
+      margin: auto;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    
+    .header_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ccc;
+    }
+
+    h3 {
+      color: rgb(48, 174, 252);
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .inner_container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .inner_container img {
+      width: 34px;
+      height: 22px;
+    }
+
+    select {
+      border: 1px solid #ccc;
+      padding: 5px 8px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+     .div_card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin-top: 10px;
+        padding:20px;
+    }
+    input{
+        height:30px;
+        width:90%;
+        margin-top:7px; 
+        padding:3px;
+        border:1px solid #ccc;
+        border-radius:6px;
+        outline: none;
+       
+    }
+    label{
+      font-size:16px;
+      
+    }
+    .tariff_card {
+      font-weight: 600;
+      color: #333;
+      margin-left:20px;
+      margin-top:0px;
+    }
+    .div_container {
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-top:0px;
+      padding:20px;
+    }
+    .div_section{
+      width: 98%;
+      background-color: #30aefc;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom:10px;
+      margin-left:10px;
+      margin-right:10px;
+    }
+
+    
+    </style>
+</head>
+<body> 
+     <form>
+    <section class="section_container">
+      
+      <div class="header_container">
+        <h3>Enter flight details</h3>
+        <div class="inner_container">
+          <img src="UK.png" alt="UK flag">
+          <select>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+        <div class="div_card">
+      <div>
+        <label for="arrival date">Arrival Date</label>
+        <input type="date" id="arrival date"  name="arrival date" />
+      </div>
+      <div>
+        <label for="Departure date">Departure date</label>
+        <input type="date" id="Departure date" name="Departure date"/>
+      </div>
+            <div>
+        <label for="arrival time">Arrival Time</label>
+        <input type="time" id="arrival time"  name="arrival time" />
+      </div>
+      <div>
+        <label for="Departure time">Departure Time</label>
+        <input type="time" id="Departure time" name="Departure time"/>
+      </div>
+    </div>
+    <p class="tariff_card">1 Tariffs from €39.00 for 8 days</p>
+     <div class="div_container">
+         <div>
+            <label for="arrival-flight">Flight Number Arrival <span>(Optional)</span></label>
+            <input type="text" id="arrival-flight" placeholder="1218">
+         </div>
+          <div>
+            <label for="departure-flight">Flight Number Departure <span>(Optional)</span></label>
+            <input type="text" id="departure-flight" placeholder="2295">           
+          </div>
+      </div>
+      <button type="submit" class="div_section">Next</button>
+      
+
+    </section>
+  </form>
+</body>
+</html>
