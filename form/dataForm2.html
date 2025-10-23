@@ -86,7 +86,7 @@
       padding:20px;
     }
     .div_section{
-      width: 98%;
+      width: calc(100% - 40px); 
       background-color: #30aefc;
       color: white;
       border: none;
@@ -95,11 +95,22 @@
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
-      margin-bottom:10px;
-      margin-left:10px;
-      margin-right:10px;
+      margin: 10px 20px 20px 20px;
     }
+    button:hover{
+      background-color:rgb(255, 28, 28);
+      
+    }
+      
+    @media screen and (max-width:500px){
+       .div_card{
+        grid-template-columns: repeat(1 ,1fr);
+       }
+        .div_container{
+          grid-template-columns: repeat(1 ,1fr);
+        }
 
+    }
     
     </style>
 </head>
