@@ -86,29 +86,20 @@
         align-items: center;
         margin-top: 3px;
         font-size: 15px;
+        margin: 10px;
       }
 
       .service-item h3 {
-        font-size: 15px;
+        font-size: 14px;
         margin: 3px 0;
       }
 
       .service-item p {
-        font-size: 15px;
+        font-size: 12px;
         margin: 3px 0;
         line-height: 1.4;
       }
-      .product_card {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding: 15px 50px;
-      }
-      .sub_card {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding: 15px 90px;
-        font-weight: 600;
-      }
+
       .footer_card {
         background-color: #f2f2f2;
         display: flex;
@@ -136,6 +127,29 @@
         width: 1px;
         background-color: #dcdcdc;
         align-self: stretch;
+      }
+      .sub_card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        margin-left: 40px;
+        gap: 20px;
+      }
+
+      .paragraph_card {
+        width: 420px;
+      }
+
+      .product_card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .product_card > div {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 10px;
       }
     </style>
   </head>
@@ -177,9 +191,9 @@
         <hr style="border: 2px solid #000000" />
       </div>
       <div class="address_card">
-        <div style="font-size: large; font-weight: 600; margin-left: 15px">
+        <span style="font-size: larger; font-weight: 700; margin-left: 15px">
           ADDRESS 1:
-        </div>
+        </span>
         <span style="margin-left: 20px; font-size: large"
           ><b>Erlenweg 8, 3294 Buren an der Aare</b> 6.5 Zimmerwohnung,
           UG/EG/OG, grosser und vollar Keller, Möbel demontieren</span
@@ -187,9 +201,9 @@
       </div>
       <hr style="border: 1px solid rgb(174, 174, 174)" />
       <div class="address_card">
-        <div style="font-size: large; font-weight: 600; margin-left: 15px">
+        <span style="font-size:larger; font-weight: 700; margin-left: 15px">
           ADDRESS 2:
-        </div>
+        </span>
         <span style="margin-left: 20px; font-size: large"
           ><b>Rebenstrasse, 4112 Battwil</b> Möbel montieren, Kartons
           auspacken</span
@@ -197,9 +211,9 @@
       </div>
       <hr style="border: 1px solid rgb(174, 174, 174)" />
       <div class="address_card">
-        <div style="font-size: large; font-weight: 600; margin-left: 15px">
+        <span style="font-size: larger; font-weight: 700; margin-left: 15px">
           WORK DATES:
-        </div>
+        </span>
         <span style="margin-left: 20px; font-size: large"
           ><b>30-11-2023 to 07-11-2023</b></span
         >
@@ -217,7 +231,7 @@
           <div>
             <h3>3 Mitarbeiter ohne Farzeung</h3>
             <p>
-              Arbeit nach Aufwand. Mindestbetrag 4 stunden. Nur die <br>
+              Arbeit nach Aufwand. Mindestbetrag 4 stunden. Nur die <br />
               grossen.Arbeit nach Aufwand. Mindestbetrag 4 stunden.Nur die
               grossen.
             </p>
@@ -302,8 +316,8 @@
           <div><b>750 CHF</b></div>
         </div>
       </div>
-      <div class="product_card">
-        <div>
+      <section class="sub_card">
+        <div class="paragraph_card">
           <h3>Konditionen Schätzofferte Umzug</h3>
           <p>
             Vielen Dank für Ihr Interesse an unseren Dienstleistungen.Sie finden
@@ -312,18 +326,25 @@
             Geschäftsbedingungen zu verstehen.
           </p>
         </div>
-        <div class="sub_card">
-          <div>SUB TOTAL</div>
-          <div>2000CHF</div>
-          <div>TAX%</div>
-          <div>100CHF (7.7%)</div>
-          <div>DISCOUNT:</div>
-          <div>100.50 CHF</div>
-          <div><strong>GRAND TOTAL:</strong></div>
-          <div><strong> 2100.50 CHF</strong></div>
+        <div class="product_card">
+          <div>
+            <span>SUB TOTAL:</span>
+            <span>2000CHF</span>
+          </div>
+          <div>
+            <span>TAX%:</span>
+            <span>100CHF (7.7%)</span>
+          </div>
+          <div>
+            <span>DISCOUNT:</span>
+            <span>100.50 CHF</span>
+          </div>
+          <div style="width:50%;background-color: #3f4e68; padding:7px 12px;border-radius:3px; color:white;">
+            <span>GRAND TOTAL:</span>
+            <span>2100.50 CHF</span>
+          </div>
         </div>
-      </div>
-
+      </section>
       <footer class="footer_card">
         <div class="footer-section">
           <div class="footer-column">
