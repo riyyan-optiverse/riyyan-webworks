@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JAVASCRIPT</h1>
+    <p id="dummy">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p>
+    <button type="button" onclick="document.getElementById('dummy').innerHTML ='hello everyone' ">Click it</button>
+    <p> Lorem Ipsum has been the industry's standard dummy text </p>
+    <button type="button" onclick="window.print()">Click it</button>
+    <p id="date_card">simply dummy text of the printing and typesetting industry.</p>
+    <button type="button" onclick="displayDate()">Click it</button>
+    <script>
+        function displayDate(){
+            document.getElementById('date_card').innerHTML = Date() ;
+        }
+    </script>
+</body>
+</html>
