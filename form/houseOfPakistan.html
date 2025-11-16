@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .bgColor_card {
+        width: 100%;
+        height: 500px; 
+        background-image: url("dentalRoom2.jpg"); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: 20px;
+      }
+
+      .header_container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 10px 35px;
+        background: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 12px;
+        box-shadow: 0px 5px 20px rgba(0,0,0,0.15);
+      }
+
+      .div_card {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+      }
+
+      .div_card img {
+        width: 90px;
+      }
+
+      .div_card1 {
+        display: flex;
+        gap: 30px;
+      }
+
+      .div_card1 a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+      }
+
+      .div_card1 a:hover {
+        color: #0657c7;
+      }
+
+      .div_card2 button {
+        padding: 8px 18px;
+        background: #0d6efd;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      .div_card2 button:hover {
+        background: #0657c7;
+      }
+    </style>
+  </head>
+
+  <body>
+    
+    <section class="bgColor_card">
+      <header class="header_container">
+        <div class="div_card">
+          <span><img src="logo.png" alt="house of pakistan" /></span>
+          <span>
+            HOUSE OF <br />PAKISTAN
+          </span>
+        </div>
+
+        <div class="div_card1">
+          <a href="#">Home</a>
+          <a href="#">About Us</a>
+          <a href="#">Search</a>
+          <a href="#">BO</a>
+          <a href="#">Pro</a>
+          <a href="#">Location</a>
+          <a href="#">Categories</a>
+          <a href="#">Offer</a>
+          <a href="#">PS</a>
+        </div>
+
+        <div class="div_card2">
+          <button type="button">Sign In</button>
+        </div>
+      </header>
+    </section>
+      
+  </body>
+</html>

@@ -4,6 +4,9 @@
      percentage:80,
      isPass:true, 
 }; */
+
+
+
    /*studant["age"]=studant["age"]+2
    console.log(studant["age"]);
    let a = 5;
@@ -62,6 +65,35 @@
        console.log("i =", i);
        i++;
      } while(i <= 6); */
-      for(let i = 0; i <=100; i++){
-        console.log("i =", i);
-      }
+    /*  for(let i = 0; i <=100; i++){
+        console.log("i =", i);    
+      } */
+    /* let marks = [98, 87 , 67, 45, 33];
+     console.log(marks);
+     let heroes = ["thor", "hulk", "batman"];
+     console.log(heroes); */
+    /* let heroes = ["aquaman", "superman", "deku", "saitama", "thor"];
+     for (let hero of heroes){
+      console.log(hero.toUpperCase());
+     } */
+   /* function myFunction(){
+      console.log("hello everyone!");
+      console.log("wsp guys");
+    }
+     myFunction(); */
+    /* function myFunction(msg){
+       console.log(msg);
+     }
+     myFunction("ayo wsp everyone"); */
+   /*  function sum(x, y){
+      s = x + y;
+      return s;
+     }
+     let val = sum(6 ,7);
+     console.log(val); */
+    const myFunction = () => {
+    console.log("hello everyone!");
+    console.log("wsp guys");
+       };
+     myFunction();
+     
