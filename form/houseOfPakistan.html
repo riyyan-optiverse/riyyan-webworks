@@ -11,8 +11,8 @@
       }
       .bgColor_card {
         width: 100%;
-        height: 500px; 
-        background-image: url("dentalRoom2.jpg"); 
+        height: 500px;
+        background-image: url("dentalRoom2.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -28,7 +28,7 @@
         justify-content: space-between;
         align-items: center;
         border-radius: 12px;
-        box-shadow: 0px 5px 20px rgba(0,0,0,0.15);
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
       }
 
       .div_card {
@@ -68,18 +68,84 @@
       .div_card2 button:hover {
         background: #0657c7;
       }
+      .section_card {
+        margin-top: 30px;
+        margin-left: 20px;
+        display: flex;
+        justify-content:space-between;
+        
+      }
+      .left_card {
+        display: flex;
+        gap: 20px;
+      }
+      .left_card img {
+        width: 150px;
+        height: 120px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+      .tag_card {
+        background: #f4edc5;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+      }
+      .icons_card {
+        margin: 20px 0;
+        display: flex;
+        gap: 20px;
+        font-size: 16px;
+      }
+      .highlights_card {
+        margin-top: 30px;
+      }
+      .right_col {
+        width: 34%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .right_info {
+        padding: 10px;
+      }
+
+      .price_row {
+        font-size: 14px;
+        color: #777;
+      }
+
+      .price_row b {
+        display: block;
+        font-size: 20px;
+        color: #111;
+        margin-top: 6px;
+      }
+
+      .meta_row {
+        margin-top: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        color: #333;
+        font-size: 15px;
+      }
+
+      .meta_row span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
     </style>
   </head>
 
   <body>
-    
     <section class="bgColor_card">
       <header class="header_container">
         <div class="div_card">
           <span><img src="logo.png" alt="house of pakistan" /></span>
-          <span>
-            HOUSE OF <br />PAKISTAN
-          </span>
+          <span> HOUSE OF <br />PAKISTAN </span>
         </div>
 
         <div class="div_card1">
@@ -99,6 +165,83 @@
         </div>
       </header>
     </section>
-      
+    <section class="section_card">
+      <div style="width: 60%">
+        <div class="top_card">
+          <div class="left_card">
+            <img src="restaurantRoom.jpeg" />
+            <div>
+              <h2>Booking - Final</h2>
+              <div>Room</div>
+              <br />
+              <span class="tag_card">Walk-In</span>
+              <span class="tag_card">Females only</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="icons_card">
+          <div>Islamabad, E-8</div>
+          <div>Closed</div>
+          <div>Hours</div>
+          <div>Policy</div>
+        </div>
+
+        <p>
+          A toy? Maybe room decor? All you want! Just imagine.Our puzzles helps
+          your kid to have entertaining and developing time. Choose your perfect
+          style of the toy and spend time playing together. Add stand - and
+          puzzle will become a beautiful room decoration.Now you have an
+          opportunity to order name puzzles with 60% discount and our Busy
+          Puzzles with 50% discount.So, what are you waiting for? Also we
+          provide wholesale offers on the most products in our range. Write to
+          us which product you are interested in and we'll
+        </p>
+
+        <hr />
+
+        <div class="highlights_card">
+          <h2>Highlights</h2>
+          <br />
+          Lorem Ipsum &nbsp;&nbsp;&nbsp; Lorem Ipsum &nbsp;&nbsp;&nbsp; Lorem
+          Ipsum &nbsp;&nbsp;&nbsp; Lorem Ipsum &nbsp;&nbsp;&nbsp; Lorem Ipsum
+        </div>
+        <h2>Details</h2>
+        <h3>H3</h3>
+        <p>
+          Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+          vulputate libero et velit interdum, ac aliquet odio mattis. Class
+          aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos. Curabitur tempus urna at turpis condimentum
+          lobortis. Yorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class
+          aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos. Curabitur tempus urna at turpis condimentum
+          lobortis. Yorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class
+          aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos. Curabitur tempus urna at turpis condimentum
+          lobortis. Yorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class
+          aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos. Curabitur tempus urna at turpis condimentum
+          lobortis
+        </p>
+      </div>
+      <div class="right_col">
+        <div class="right_info">
+          <div class="price_row">
+            Starting from
+            <b>Rs. 1000</b>
+          </div>
+
+          <div class="meta_row">
+            <span> 1 Person</span>
+            <span> Sat, 20 Dec, 6:30 PM</span>
+            <span> F7 Markaz, Islamabad</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
