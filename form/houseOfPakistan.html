@@ -28,7 +28,6 @@
         justify-content: space-between;
         align-items: center;
         border-radius: 12px;
-        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
       }
 
       .div_card {
@@ -72,8 +71,7 @@
         margin-top: 30px;
         margin-left: 20px;
         display: flex;
-        justify-content:space-between;
-        
+        justify-content: space-between;
       }
       .left_card {
         display: flex;
@@ -100,19 +98,12 @@
       .highlights_card {
         margin-top: 30px;
       }
-      .right_col {
-        width: 34%;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
-
-      .right_info {
-        padding: 10px;
+      .main_div {
+       margin-right: 35px;
       }
 
       .price_row {
-        font-size: 14px;
+        font-size: 15px;
         color: #777;
       }
 
@@ -129,13 +120,109 @@
         flex-direction: column;
         gap: 8px;
         color: #333;
-        font-size: 15px;
+        font-size: 17px;
       }
 
       .meta_row span {
         display: flex;
         align-items: center;
         gap: 10px;
+      }
+      .container_card {
+        width: 330px;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+      }
+
+      .nav-tabs {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      
+      .date-card {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .date-item {
+        width: 50px;
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      .date-item.active {
+        background: black;
+        color: white;
+      }
+
+      
+      .card {
+        background: #eef7f3;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+      }
+
+      .card-header {
+        font-weight: bold;
+      }
+
+      .card-sub {
+        font-size: 12px;
+        color: #666;
+        margin: 5px 0;
+      }
+
+      .card-body {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+      }
+
+      .ticket-price {
+        font-weight: bold;
+      }
+
+      .counter-box {
+        border: 1px solid #000;
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+
+      .card-info {
+        font-size: 12px;
+        color: #555;
+      }
+
+      
+      .total-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        margin: 20px 0;
+      }
+
+      
+      .btn_card2 {
+        width: 100%;
+        padding: 12px;
+        background: #fe1c37;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .btn_card2:hover{
+        background-color: #c20017;
       }
     </style>
   </head>
@@ -198,7 +285,7 @@
           us which product you are interested in and we'll
         </p>
 
-        <hr />
+        <hr/>
 
         <div class="highlights_card">
           <h2>Highlights</h2>
@@ -206,6 +293,7 @@
           Lorem Ipsum &nbsp;&nbsp;&nbsp; Lorem Ipsum &nbsp;&nbsp;&nbsp; Lorem
           Ipsum &nbsp;&nbsp;&nbsp; Lorem Ipsum &nbsp;&nbsp;&nbsp; Lorem Ipsum
         </div>
+        <hr/>
         <h2>Details</h2>
         <h3>H3</h3>
         <p>
@@ -228,18 +316,62 @@
           lobortis
         </p>
       </div>
-      <div class="right_col">
-        <div class="right_info">
-          <div class="price_row">
-            Starting from
-            <b>Rs. 1000</b>
+      <div class="main_div">
+        <div class="price_row">
+          Starting from
+          <b>Rs. 1000</b>
+        </div>
+
+        <div class="meta_row">
+          <span> 1 Person | Sat, 20 Dec, 6:30 PM</span>
+          <span> F7 Markaz, Islamabad</span>
+        </div>
+        <div class="container_card">
+          <h3 class="nav-tabs">Find Space | Your Details</h3>
+
+          
+          <div class="date-card">
+            <div class="date-item active">02<br /><small>Thu</small></div>
+            <div class="date-item">03<br /><small>Fri</small></div>
+            <div class="date-item">04<br /><small>Sat</small></div>
+            <div class="date-item">05<br /><small>Sun</small></div>
+            <div class="date-item">06<br /><small>Mon</small></div>
           </div>
 
-          <div class="meta_row">
-            <span> 1 Person</span>
-            <span> Sat, 20 Dec, 6:30 PM</span>
-            <span> F7 Markaz, Islamabad</span>
+          
+          <div class="card">
+            <div class="card-header">Silver Standing (Early Bird)</div>
+            <p class="card-sub">12 April, 2025</p>
+
+            <div class="card-body">
+              <span class="ticket-price">Rs. 1000</span>
+            </div>
+
+            <p class="card-info">
+              -Each ticket grants entry to 1 person in the GA zone.<br />-Standing
+              Zone
+            </p>
           </div>
+
+          <div class="card">
+            <div class="card-header">Silver Standing</div>
+
+            <div class="card-body">
+              <span class="ticket-price">Rs. 1000</span>
+            </div>
+
+            <p class="card-info">
+              -Each ticket grants entry to 1 person in the GA zone.<br />-Standing
+              Zone
+            </p>
+          </div>
+
+          <div class="total-row">
+            <b>Total</b>
+            <b>Rs. 2054.19</b>
+          </div>
+
+          <button class="btn_card2">Book Tickets</button>
         </div>
       </div>
     </section>
