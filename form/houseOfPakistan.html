@@ -219,6 +219,34 @@
       .btn_card2:hover{
         background-color: #c20017;
       }
+      .color_card1{
+       
+        width:500px;
+        height:4px;
+        background: linear-gradient(to right, rgb(0, 192, 147) 80%, rgb(142, 255, 230) 20%);
+      }
+      .color_card2{
+       
+        width:500px;
+        height:4px;
+        background: linear-gradient(to right, rgb(0, 192, 147) 20%, rgb(142, 255, 230) 20%);
+      }
+       .color_card3{
+       
+        width:500px;
+        height:4px;
+        background: linear-gradient(to right, rgb(0, 192, 147) 70%, rgb(142, 255, 230) 20%);
+      }
+      .section_card3{
+        margin-left: 20px;
+        
+      }
+      .percentage_card{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap:20px;
+      }
     </style>
   </head>
 
@@ -370,12 +398,43 @@
         </div>
       </div>
     </section>
-    <div>
-  <p>Excellent</p>
-  <div>
-    <div></div>
+    <section class="section_card3">
+    <h2>Reviews & Ratings</h2>
+    <div style="margin-bottom: 10px;">
+  <span>Excellent</span>
+  <div class="percentage_card">
+    <div class="color_card1"></div>
     <span>80%</span>
   </div>
+  </div>
+  <div style="margin-bottom: 10px;">
+  <span>Good</span>
+  <div class="percentage_card">
+    <div class="color_card2"></div>
+    <span>20%</span>
+  </div>
 </div>
+<div style="margin-bottom: 10px;">
+  <span>Average</span>
+  <div class="percentage_card">
+    <div class="color_card2"></div>
+    <span>20%</span>
+  </div>
+</div>
+<div style="margin-bottom: 10px;">
+  <span>Poor</span>
+  <div class="percentage_card">
+    <div class="color_card3"></div>
+    <span>70%</span>
+  </div>
+</div>
+<div style="margin-bottom: 10px;">
+  <span>Not Recommended</span>
+  <div class="percentage_card">
+    <div class="color_card3"></div>
+    <span>70%</span>
+  </div>
+</div>
+</section>
   </body>
 </html>
