@@ -308,7 +308,7 @@
         border-radius: 12px;
         padding: 15px;
         margin: 20px;
-        width:60%;
+        width: 60%;
       }
       .review-header {
         display: flex;
@@ -359,8 +359,48 @@
         margin-top: 20px;
         border-bottom: 1px solid #ddd;
       }
-      .my-review2{
-        margin-top:20px;
+      .my-review2 {
+        margin-top: 20px;
+      }
+      .date_card {
+        display: flex;
+      }
+      .Images_container {
+        display: flex;
+        gap: 10px;
+      }
+      .Images_container img {
+        width: 100px;
+        height: 100px;
+        border-radius: 4px;
+      }
+      .kabab_card {
+        margin-left: 20px;
+      }
+      .kabab_card img {
+        width: 785px;
+        height: 300px;
+        border-radius: 3px;
+      }
+      .FAQ_card {
+        width:64%;
+        padding:10px 10px;
+        box-shadow: 1px 1px 3px rgb(179, 179, 179) ;
+        border-radius:6px;
+        margin-left:20px;
+      }
+    .FAQ_card span{
+      margin-top:7px;
+      margin-left:5px;
+    }
+      .FAQ_card p{
+        margin-left:10px;
+
+      }
+      .whole_card{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
       }
     </style>
   </head>
@@ -614,11 +654,11 @@
         </div>
 
         <p class="review-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-          vulputate libero et 
-          velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu
-          ad litora
-          torquent per conubia nostra.
+          Dorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+          vulputate libero et velit interdum, ac aliquet odio mattis. Class
+          aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos. Dorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Nunc vulputate liberon...
           <span class="more">Show More</span>
         </p>
 
@@ -628,9 +668,10 @@
           <img src="restaurantRoom.jpeg" />
           <img src="restaurantRoom.jpeg" />
         </div>
-
-        <div class="reactions">❤ 13 &nbsp; 👍 8 &nbsp; 🔥 7 &nbsp; 😍 1</div>
-        <div class="review-date">23 Nov,2023</div>
+        <div class="date_card">
+          <div class="reactions">❤ 13 &nbsp; 👍 8 &nbsp; 🔥 7 &nbsp; 😍 1</div>
+          <div class="review-date">23 Nov,2023</div>
+        </div>
       </div>
 
       <div class="my-review">
@@ -646,11 +687,11 @@
         </div>
 
         <p class="review-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-          vulputate libero et 
-          velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu
-          ad litora
-          torquent per conubia nostra.
+          Dorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+          vulputate libero et velit interdum, ac aliquet odio mattis. Class
+          aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos. Dorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Nunc vulputate liberon...
           <span class="more">Show More</span>
         </p>
 
@@ -660,9 +701,10 @@
           <img src="restaurantRoom.jpeg" />
           <img src="restaurantRoom.jpeg" />
         </div>
-
-        <div class="reactions">❤ 13 &nbsp; 👍 8 &nbsp; 🔥 7 &nbsp; 😍 1</div>
-        <div class="review-date">23 Nov,2023</div>
+        <div class="date_card">
+          <div class="reactions">❤ 13 &nbsp; 👍 8 &nbsp; 🔥 7 &nbsp; 😍 1</div>
+          <div class="review-date">23 Nov,2023</div>
+        </div>
       </div>
 
       <div class="my-review2">
@@ -678,11 +720,11 @@
         </div>
 
         <p class="review-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-          vulputate libero et 
-          velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu
-          ad litora
-          torquent  per conubia nostra.
+          Dorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+          vulputate libero et velit interdum, ac aliquet odio mattis. Class
+          aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos. Dorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Nunc vulputate liberon...
           <span class="more">Show More</span>
         </p>
 
@@ -692,10 +734,54 @@
           <img src="restaurantRoom.jpeg" />
           <img src="restaurantRoom.jpeg" />
         </div>
-
-        <div class="reactions">❤ 13 &nbsp; 👍 8 &nbsp; 🔥 7 &nbsp; 😍 1</div>
-        <div class="review-date">23 Nov,2023</div>
+        <div class="date_card">
+          <div class="reactions">❤ 13 &nbsp; 👍 8 &nbsp; 🔥 7 &nbsp; 😍 1</div>
+          <div class="review-date">23 Nov,2023</div>
+        </div>
       </div>
     </div>
+    <section style="margin-left: 20px; width: 60%">
+      <h3>Photos from Reviews</h3>
+      <div class="Images_container">
+        <img src="Nature Image 1.jpg" alt="nature" />
+        <img src="Nature Image2.jpg" alt="nature" />
+        <img src="Nature Image3.jpg" alt="nature" />
+        <img src="Nature Image4.jpg" alt="nature" />
+        <img src="Nature Image5.jpg" alt="nature" />
+        <img src="Nature Image6.webp" alt="nature" />
+        <img src="Nature Image7.jpeg" alt="nature" />
+      </div>
+    </section>
+    <section>
+      <div style="margin-left: 30px; margin-top: 25px">
+        <span style="color: #777"> Sponsored</span>
+      </div>
+      <div class="kabab_card">
+        <img src="Kabab image2.jpeg" alt="kabab" />
+      </div>
+    </section>
+    <section style="margin-left: 20px; margin-top: 30px">
+      <h2>FAQS</h2>
+      <div class="whole_card">
+      <div class="FAQ_card">
+        <span><b>FAQ 1</b></span>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation.Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit, sed
+        </p>
+      </div>
+      <div class="FAQ_card">
+        <span><b>FAQ 1</b></span>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation.Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit, sed
+        </p>
+      </div>
+      </div>
+    </section>
   </body>
 </html>
