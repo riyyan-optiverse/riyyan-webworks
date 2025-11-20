@@ -91,9 +91,9 @@
      }
      let val = sum(6 ,7);
      console.log(val); */
-    const myFunction = () => {
+    /*const myFunction = () => {
     console.log("hello everyone!");
     console.log("wsp guys");
        };
-     myFunction();
+     myFunction(); */
      
