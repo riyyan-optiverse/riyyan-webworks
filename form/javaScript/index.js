@@ -4,9 +4,6 @@
      percentage:80,
      isPass:true, 
 }; */
-
-
-
    /*studant["age"]=studant["age"]+2
    console.log(studant["age"]);
    let a = 5;
@@ -37,18 +34,6 @@
        let b = 4;
        a += 5; 
        console.log("a =" , a); */
-
-    /*  let a = 5;
-       let b = 5;
-       console.log("5 == 5" , a == b);
-        console.log("5 != 5" , a != b); */
-     /*   let age = 16;
-        if (age >= 18) {
-        console.log("You can vote");
-        }
-        if (age < 18){
-          console.log("You cannot vote");
-        } */
      /*  for(let i = 1; i <= 7; i++){
           console.log("Hello Everyone");
        } */
@@ -96,4 +81,52 @@
     console.log("wsp guys");
        };
      myFunction(); */
-     
+     /* const studant={
+        fullName:"ALI",
+        age:16,
+        percentage:80,
+        isPass:true,
+
+      };
+      studant["age"]=studant["age"]+2
+      console.log(studant["age"]);*/
+      /* let a = 5;
+       let b = 5;
+       console.log("5 == 5" , a == b);
+        console.log("5 != 5" , a != b); 
+
+       let age = 16;
+        if (age >= 18) {
+        console.log("You can vote");
+        }
+        if (age < 18){
+          console.log("You cannot vote");
+        } */
+     /*  let age = 15;
+       if (age >= 18) {
+        console.log("You can vote");
+       }
+       else {
+        console.log("You cant vote");
+       } */
+     /* let percentage = 77;
+      if (percentage <= 33) {
+        console.log("Fail");
+      }
+      else if (percentage <= 43) {
+        console.log("Grade E");
+      }
+      else if (percentage <= 57) {
+        console.log("Grade D");
+      }
+      else if (percentage <= 67) {
+        console.log("Grade C");
+      }
+      else if (percentage <= 80) {
+        console.log("Grade B");
+      }
+      else {
+        console.log("Grade A");
+      } */
+   
+  
