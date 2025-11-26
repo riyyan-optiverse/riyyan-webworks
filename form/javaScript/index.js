@@ -4,7 +4,7 @@
      percentage:80,
      isPass:true, 
 }; */
-   /*studant["age"]=studant["age"]+2
+/*studant["age"]=studant["age"]+2
    console.log(studant["age"]);
    let a = 5;
    let b = 4;
@@ -14,7 +14,7 @@
    console.log("a = ", a * b );
    console.log("a = ", a / b ); */
 
-  /* let a = 5;
+/* let a = 5;
    let b = 4;
        console.log("a = ", a, " & b = ", b);
        
@@ -22,66 +22,65 @@
        console.log("a =" , a);
        console.log("++a =" , ++a); */
 
-    /*   let a = 5;
+/*   let a = 5;
       let b = 4;
        console.log("a = ", a, " & b = ", b);
        console.log("a-- =" , a--);
        console.log("a =" , a);
        console.log("--a =" , --a) */
 
-
-     /*  let a = 5;
+/*  let a = 5;
        let b = 4;
        a += 5; 
        console.log("a =" , a); */
-     /*  for(let i = 1; i <= 7; i++){
+/*  for(let i = 1; i <= 7; i++){
           console.log("Hello Everyone");
        } */
-   /*   for(let i = 1; i <= 7; i++){
+/*   for(let i = 1; i <= 7; i++){
           console.log("i =", i);
       } */
-   /*  let i = 1;
+/*  let i = 1;
      while(i <= 7) {
       console.log("i =", i);
       i++;
      } */
-  /*   let i = 1;
+/*   let i = 1;
      do{
        console.log("i =", i);
        i++;
      } while(i <= 6); */
-    /*  for(let i = 0; i <=100; i++){
+/*  for(let i = 0; i <=100; i++){
         console.log("i =", i);    
       } */
-    /* let marks = [98, 87 , 67, 45, 33];
+/* let marks = [98, 87 , 67, 45, 33];
      console.log(marks);
      let heroes = ["thor", "hulk", "batman"];
      console.log(heroes); */
-    /* let heroes = ["aquaman", "superman", "deku", "saitama", "thor"];
+/* let heroes = ["aquaman", "superman", "deku", "saitama", "thor"];
      for (let hero of heroes){
       console.log(hero.toUpperCase());
      } */
-   /* function myFunction(){
+/* function myFunction(){
       console.log("hello everyone!");
       console.log("wsp guys");
     }
      myFunction(); */
-    /* function myFunction(msg){
+/* function myFunction(msg){
        console.log(msg);
      }
      myFunction("ayo wsp everyone"); */
-   /*  function sum(x, y){
+/*  function sum(x, y){
       s = x + y;
       return s;
      }
      let val = sum(6 ,7);
      console.log(val); */
-    /*const myFunction = () => {
+/*const myFunction = () => {
     console.log("hello everyone!");
     console.log("wsp guys");
        };
      myFunction(); */
-     /* const studant={
+/* const studant={
         fullName:"ALI",
         age:16,
         percentage:80,
@@ -90,7 +89,7 @@
       };
       studant["age"]=studant["age"]+2
       console.log(studant["age"]);*/
-      /* let a = 5;
+/* let a = 5;
        let b = 5;
        console.log("5 == 5" , a == b);
         console.log("5 != 5" , a != b); 
@@ -102,14 +101,14 @@
         if (age < 18){
           console.log("You cannot vote");
         } */
-     /*  let age = 15;
+/*  let age = 15;
        if (age >= 18) {
         console.log("You can vote");
        }
        else {
         console.log("You cant vote");
        } */
-     /* let percentage = 77;
+/* let percentage = 77;
       if (percentage <= 33) {
         console.log("Fail");
       }
@@ -128,5 +127,25 @@
       else {
         console.log("Grade A");
       } */
-   
-  
+function myFunction2() {
+  console.log("hello everyone!");
+  console.log("wsp guys");
+}
+function greet() {
+  console.log("Hello! Welcome to JavaScript.");
+}
+
+greet();
+myFunction2();
+function myFunction(msg) {
+  console.log(msg);
+}
+myFunction("ayo wsp everyone");
+function sum(x, y) {
+  console.log(x + y);
+}
+const myFunction3 = () => {
+    console.log("hello everyone!");
+    console.log("wsp guys");
+       };
+     myFunction3(); 
