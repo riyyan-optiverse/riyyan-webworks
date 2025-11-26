@@ -16,28 +16,24 @@
       console.log("It's hot!");
     } */
    function calculateGrade() {
-   let math = Number(prompt("Enter your Math marks:"));
-   let english =Number(prompt("Enter your English marks:"));
-   let science =Number(prompt("Enter your Science marks:"));
-   let average = (math + english + science) / 3;
-   console.log("Your average is:", average);
-   let total = average >= 80 ? "Excellent" : "Needs Improvement";
-   console.log(total);
-   let grade;
-   if (average >= 90){
-    console.log("Your grade is A");
-   }
-   else if(average >= 80){
-    console.log("Your grade is B");
-   }
-    else if(average >= 70){
-    console.log("Your grade is C");
-   }
-    else if(average >= 60){
-    console.log("Your grade is D");
-   }
-   else{
-    console.log("Fail");
-   }
-   }
-   calculateGrade();
+    let math = Number(prompt("Enter your Math marks:"));
+    let english = Number(prompt("Enter your English marks:"));
+    let science = Number(prompt("Enter your Science marks:"));
+    let average = (math + english + science) / 3;
+    console.log("Your average is:", average);
+    let total = average >= 80 ? "Excellent" : "Needs Improvement";
+    console.log(total);
+    if (average >= 90) {
+        console.log("Your grade is A");
+    } else if (average >= 80) {
+        console.log("Your grade is B");
+    } else if (average >= 70) {
+        console.log("Your grade is C");
+    } else if (average >= 60) {
+        console.log("Your grade is D");
+    } else {
+        console.log("Fail");
+    }
+}
+
+calculateGrade();
