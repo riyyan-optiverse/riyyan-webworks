@@ -20,20 +20,25 @@
     let english = Number(prompt("Enter your English marks:"));
     let science = Number(prompt("Enter your Science marks:"));
     let average = (math + english + science) / 3;
-    console.log("Your average is:", average);
-    let total = average >= 80 ? "Excellent" : "Needs Improvement";
-    console.log(total);
+    let total = average >= 80 ? "Excellent!" : "Needs Improvement!";
+    let grade;
     if (average >= 90) {
-        console.log("Your grade is A");
+        grade = "A";
     } else if (average >= 80) {
-        console.log("Your grade is B");
+        grade = "B";
     } else if (average >= 70) {
-        console.log("Your grade is C");
+        grade = "C";
     } else if (average >= 60) {
-        console.log("Your grade is D");
+        grade = "D";
     } else {
-        console.log("Fail");
+        grade = "Fail!";
     }
+    document.getElementById("gradeResult").innerHTML = `
+    <p><b>Your Average is:</b> ${average}</p> 
+    <P><b>Your Performance:</b> ${total}</P>
+    <p><b>Your Grade is:</b> ${grade}</p>
+
+    `;
 }
 
 calculateGrade();

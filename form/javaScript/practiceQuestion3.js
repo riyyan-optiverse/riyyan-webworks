@@ -39,7 +39,7 @@ function convertTemp() {
   else {
     mood = "Extreme Heat";
   }
- let hydrationCard = celsiusVal > 35 ? "Stay Hydrated!" : "Weather looks good!";
+ let hydrationCard = celsiusVal > 30 ? "Stay Hydrated!" : "Weather looks good!";
 
   document.getElementById("result").innerHTML = `
   <p><b>Converted Temperature:</b> ${convertedTemp}</p>
