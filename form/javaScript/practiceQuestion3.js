@@ -1,7 +1,19 @@
 function convertTemp() {
-  let ansVal = Number(document.getElementById("tempInput").value);
+  let ansVal = document.getElementById("tempInput").value;
   let choice = document.getElementById("Dropdown_card").value;
+ 
+ if (ansVal === "") {
+  document.getElementById("result").innerHTML =
+  "<p><b>Please Enter a Temperature!</b></p>"
+  return;
+ }
+ if (choice === "") {
+  document.getElementById("result").innerHTML =
+  "<p><b>Please Select a Mode!</b></p>"
+  return;
+ }
 
+  ansVal = Number(ansVal); 
   let convertedTemp;
   let celsiusVal;
 
