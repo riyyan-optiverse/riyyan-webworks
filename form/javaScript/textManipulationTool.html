@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>textManipulationTool</title>
+    <style>
+      body {
+        background: #e5e7eb;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+      .main_card {
+        width: 30%;
+        background-color: white;
+        padding: 20px;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+      h2 {
+        text-align: center;
+      }
+      input {
+        width: 95%;
+        padding: 10px;
+        outline: none;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #aaa;
+      }
+      .btn_card {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+      }
+      button {
+        background-color: #2a66e6;
+        color: white;
+        padding: 13px;
+        font-size: 14px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        flex: 1;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #0745ca;
+      }
+      .del_btn {
+        background-color: rgb(255, 0, 0);
+      }
+      .del_btn:hover {
+        background-color: rgb(169, 3, 3);
+      }
+      #output {
+        margin-top: 12px;
+        min-height: 120px;
+        background: #e5e7eb;
+        padding: 15px;
+        border-radius: 8px;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main_card">
+      <h2>Text Manipulation Tool</h2>
+      <input type="text" id="input_card" placeholder="Enter your text" />
+      <div class="btn_card">
+        <button onclick="countChars()">Count Characters</button>
+        <button onclick="reverseText()">Reverse text</button>
+        <button onclick="fAndLChars()">Find first and last character</button>
+        <button onclick="upAndLowerCase()">
+          Convert to uppercase/lowercase
+        </button>
+        <button onclick="countLetter()">Count Letter</button>
+        <button class="del_btn" onclick="clearAll()">Clear All</button>
+      </div>
+      <div id="output"></div>
+    </div>
+    <script>
+      function getValue() {
+        let text = document.getElementById("input_card").value;
+        return text;
+      }
+      function display(result) {
+        document.getElementById("output").textContent = result;
+      }
+      function countChars() {
+        let text = getValue();
+        if (text === "") {
+          display("Please Enter something");
+          return;
+        }
+        let len = text.length;
+        display("Character Count:\n" + len);
+      }
+      function reverseText() {
+        let text = getValue();
+        if (text === "") {
+          display("Please Enter something");
+          return;
+        }
+        let reversed = "";
+        for (let i = text.length - 1; i >= 0; i--) {
+          reversed += text[i];
+        }
+        display("Reversed Text:\n" + reversed);
+      }
+      function fAndLChars() {
+        let text = getValue();
+        if (text === "") {
+          display("Please Enter something");
+          return;
+        }
+        let first = text.charAt(0);
+        let last = text.at(-1);
+        display(`First Letter: ${first} \n -Last Letter: ${last}`);
+      }
+      function upAndLowerCase() {
+        let text = getValue();
+        if (text === "") {
+          display("Please Enter something");
+          return;
+        }
+        let up = text.toUpperCase();
+        let down = text.toLowerCase();
+        display(`Upper Case: ${up} \n -Lower Case: ${down}`);
+      }
+      function countLetter() {
+        let text = getValue();
+         if (text === "") {
+          display("Please Enter something");
+          return;
+        }
+        let letter = prompt("Enter the letter to count:");
+        if (!letter) return display("Please enter a single character.");
+        letter = letter[0];
+
+        let count = 0;
+
+        for (let i = 0; i < text.length; i++) {
+          if (text[i].toLowerCase() === letter.toLowerCase()) {
+            count++;
+          }
+        }
+
+        display(`Letter "${letter}" appears ${count} times.`);
+      }
+      function clearAll() {
+        document.getElementById("input_card").value = "";
+        display("Output cleared.");
+      }
+    </script>
+  </body>
+</html>
