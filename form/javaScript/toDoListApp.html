@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toDoListTask</title>
+  </head>
+  <style>
+    body {
+      background: #e5e7eb;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+    .div_card {
+      background-color: white;
+      width: 370px;
+      padding: 25px;
+      border-radius: 7px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+    }
+    input {
+      width: 75%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+    }
+    #btn_card {
+      padding: 10px 15px;
+      background: #3385ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #btn_card:hover {
+      background: #1a5fd6;
+    }
+    select {
+      margin-top: 10px;
+      padding: 8px;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+  </style>
+  <body>
+    <div class="div_card">
+      <h2>To-Do List</h2>
+      <input type="text" id="task_card" placeholder="Enter new task..." />
+      <button id="btn_card">Add</button>
+
+      <select id="filter_card">
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+      </select>
+
+      <ul id="task_List"></ul>
+    </div>
+    <script>
+      let addBtn = document.getElementById("btn_card");
+      let taskInput = document.getElementById("task_card");
+      let taskList = document.getElementById("task_List");
+      let filter = document.getElementById("filter_card");
+
+    
+      addBtn.addEventListener("click", () => {
+        let task = taskInput.value;
+
+        if (task === "") {
+          alert("Please enter a task!");
+          return;
+        }
+
+        let li = document.createElement("li");
+        li.classList.add("task-item");
+        li.style.listStyle = "none";
+        li.style.background = "#f3f4f6";
+        li.style.padding = "10px";
+        li.style.marginTop = "10px";
+        li.style.borderRadius = "5px";
+        li.style.display = "flex";
+        li.style.justifyContent = "space-between";
+        li.style.cursor = "pointer";
+
+        li.innerHTML = `
+          <span class="text">${task}</span>
+          <button class="deleteBtn" style="background:red;color:white;border:none;padding:5px 8px;border-radius:4px;cursor:pointer;">X</button>
+        `;
+
+      
+        li.addEventListener("click", (e) => {
+          if (e.target.classList.contains("deleteBtn")) return;
+
+         
+        });
+
+        li.querySelector(".deleteBtn").addEventListener("click", () => {
+          li.remove();
+        });
+
+        taskList.appendChild(li);
+        taskInput.value = "";
+      });
+
+      filter.addEventListener("change", () => {
+        let items = taskList.querySelectorAll("li");
+
+        items.forEach((li) => {
+          switch (filter.value) {
+            case "completed":
+              li.style.display = li.classList.contains("completed") ? "flex" : "none";
+              break;
+
+            case "pending":
+              li.style.display = !li.classList.contains("completed") ? "flex" : "none";
+              break;
+
+            default:
+              li.style.display = "flex";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
