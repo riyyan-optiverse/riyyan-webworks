@@ -22,8 +22,8 @@
         text-align: center;
       }
       input {
-        width: 95%;
-        padding: 10px;
+        width: 91%;
+        padding: 15px;
         outline: none;
         margin-bottom: 15px;
         border-radius: 5px;
@@ -60,7 +60,6 @@
         background: #e5e7eb;
         padding: 15px;
         border-radius: 8px;
-        
       }
     </style>
   </head>
@@ -76,6 +75,7 @@
           Convert to uppercase/lowercase
         </button>
         <button onclick="countLetter()">Count Letter</button>
+        <button onclick="countWord()">Count Word</button>
         <button class="del_btn" onclick="clearAll()">Clear All</button>
       </div>
       <div id="output"></div>
@@ -86,7 +86,7 @@
         return text;
       }
       function display(result) {
-        document.getElementById("output").textContent = result;
+        document.getElementById("output").innerHTML = result;
       }
       function countChars() {
         let text = getValue();
@@ -117,7 +117,7 @@
         }
         let first = text.charAt(0);
         let last = text.at(-1);
-        display(`First Letter: ${first} \n -Last Letter: ${last}`);
+        display(`First Letter: ${first}<br> Last Letter: ${last}`);
       }
       function upAndLowerCase() {
         let text = getValue();
@@ -127,11 +127,11 @@
         }
         let up = text.toUpperCase();
         let down = text.toLowerCase();
-        display(`Upper Case: ${up} \n -Lower Case: ${down}`);
+        display(`Upper Case: ${up} <br> Lower Case: ${down}`);
       }
       function countLetter() {
         let text = getValue();
-         if (text === "") {
+        if (text === "") {
           display("Please Enter something");
           return;
         }
@@ -148,6 +148,18 @@
         }
 
         display(`Letter "${letter}" appears ${count} times.`);
+      }
+      function countWord() {
+        let text = getValue();
+        if (text.trim() === "") {
+          display("Please enter something");
+          return;
+        }
+
+        let words = text.trim().split(/\s+/);
+        let wordCount = words.length;
+
+        display(`Word count: ${wordCount}`);
       }
       function clearAll() {
         document.getElementById("input_card").value = "";
