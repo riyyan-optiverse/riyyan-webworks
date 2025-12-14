@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Quiz</title>
+  <style>
+    body {
+      background: #e5e7eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top:40px;
+    }
+
+    .box {
+      background: white;
+      padding: 20px;
+      width: 350px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 5px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1e40af;
+    }
+
+    .correct {
+      background: green;
+    }
+
+    .wrong {
+      background: red;
+    }
+
+    .info {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    #btn_card{
+     background-color:rgb(250, 27, 27);
+    }
+    #btn_card:hover{
+      background-color:rgb(196, 0, 0);
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Quiz</h2>
+
+  <p id="question"></p>
+  <div id="answers"></div>
+  <p id="message"></p>
+
+  <button onclick="restart()" id="btn_card">Restart Quiz</button>
+</div>
+
+<script>
+  let questionNo = 1;
+  let score = 0;
+
+  let question = document.getElementById("question");
+  let answers = document.getElementById("answers");
+  let message = document.getElementById("message");
+
+  function showQuestion() {
+    answers.innerHTML = "";
+    message.textContent = "";
+
+    if (questionNo === 1) {
+      question.textContent = "HTML is used for?";
+
+      createButton("Styling", false);
+      createButton("Structure", true);
+      createButton("Logic", false);
+    }
+
+    else if (questionNo === 2) {
+      question.textContent = "CSS is used for?";
+
+      createButton("Structure", false);
+      createButton("Data Base", false);
+      createButton("Styling", true);
+    }
+
+    else if (questionNo === 3) {
+      question.textContent = "JS stands for?";
+
+      createButton("JavaScript", true);
+      createButton("Java Source", false);
+      createButton("Just Style", false);
+    }
+    else if (questionNo === 4) {
+      question.textContent = "Which tag is for JS?";
+      createButton("<js>", false);
+      createButton("<javascript>", false);
+      createButton("<script>", true);   
+    }
+
+    else if (questionNo === 5) {
+      question.textContent = "Which is a loop?";
+      createButton("if", false);
+      createButton("for", true);        
+      createButton("else", false);
+    }
+
+    else {
+      question.textContent = "Quiz Finished";
+      answers.innerHTML = "";
+      message.textContent = "Your score is: " + score;
+    }
+  }
+
+  function createButton(text, isCorrect) {
+    let btn = document.createElement("button");
+    btn.textContent = text;
+
+    btn.onclick = function () {
+      if (isCorrect) {
+        message.textContent = "Correct!";
+        score++;
+      } else {
+        message.textContent = "Wrong!";
+      }
+
+      questionNo++;
+      setTimeout(showQuestion, 1000);
+    };
+
+    answers.appendChild(btn);
+  }
+  function restart() {
+  questionNo = 1;   
+  score = 0;        
+  showQuestion();   
+}
+
+  showQuestion();
+</script>
+
+</body>
+</html>
