@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jsTask</title>
+    <style>
+      body {
+        background: #e5e7eb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      .box_card {
+        background: white;
+        padding: 20px;
+        width: 350px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .word_card {
+        color: rgb(208, 0, 0);
+        cursor: pointer;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      .word_card:hover {
+        color: red;
+      }
+
+      #output {
+        margin-top: 20px;
+        padding: 15px;
+        border: 1px solid #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box_card">
+      <p>
+        <span class="word_card" onclick="showQuestion('js')">JavaScript</span>
+        <span>|</span>
+        <span class="word_card" onclick="showQuestion('html')">HTML</span>
+        <span>|</span>
+        <span class="word_card" onclick="showQuestion('css')">CSS</span>
+      </p>
+
+      <div id="output">Questions</div>
+    </div>
+    <script>
+      function showQuestion(word) {
+        if (word === "js") {
+          document.getElementById("output").innerHTML =
+            "1. What is JavaScript used for?<br>" +
+            "2. Is JavaScript a programming language?<br>" +
+            "3. Give one example of JavaScript on a website.";
+        } else if (word === "html") {
+          document.getElementById("output").innerHTML =
+            "1. What does HTML stand for?<br>" +
+            "2. What is HTML mainly used for?<br>" +
+            "3. Name one HTML tag.";
+        } else if (word === "css") {
+          document.getElementById("output").innerHTML =
+            "1. What is CSS used for?<br>" +
+            "2. How does CSS help a website?<br>" +
+            "3. Name one CSS property.";
+        }
+      }
+    </script>
+  </body>
+</html>
