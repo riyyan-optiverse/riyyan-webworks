@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>personalFinanceManagementSystem</title>
+    <style>
+      body {
+        background-color: #f3f4f6;
+        padding: 20px;
+      }
+      h2 {
+        text-align: center;
+      }
+      .box {
+        background-color: #ffffff;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+      }
+      input,
+      select,
+      button {
+        width: 100%;
+        padding: 8px;
+        margin-top: 6px;
+        box-sizing: border-box;
+      }
+      button {
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0545d0;
+      }
+      .output {
+        background-color: #e5e7eb;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 6px;
+        white-space: pre-line;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Personal Finance Management System</h2>
+
+    <div class="box">
+      <h3>Add Transaction</h3>
+      <select id="type">
+        <option value="">Select Type</option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <input type="text" id="category" placeholder="Category (food, salary)" />
+      <input type="number" id="amount" placeholder="Amount" />
+      <input type="date" id="date" />
+      <button onclick="addTransaction()">Add Transaction</button>
+    </div>
+
+    <div class="box">
+      <h3>Remove Transaction</h3>
+      <input type="number" id="removeId" placeholder="Transaction ID" />
+      <button onclick="removeTransaction()">Remove Transaction</button>
+    </div>
+
+    <div class="box">
+      <h3>Savings Goal</h3>
+      <input type="number" id="goal" placeholder="Savings Goal" />
+      <button onclick="setSavingsGoal()">Set Savings Goal</button>
+    </div>
+
+    <div class="box">
+      <h3>Budget</h3>
+      <input type="text" id="budgetCategory" placeholder="Category" />
+      <input type="number" id="budgetAmount" placeholder="Budget Amount" />
+      <button onclick="setBudget()">Set Budget</button>
+    </div>
+
+    <div class="box">
+      <button onclick="viewTransactions()">View Transactions</button>
+      <button onclick="calculateBalance()">Calculate Balance</button>
+      <div class="output" id="result"></div>
+    </div>
+
+    <script>
+      let transactions = {};
+      let idCounter = 1;
+      let savingsGoal = 0;
+      let budgets = {};
+
+      function addTransaction() {
+        let type = document.getElementById("type").value.trim();
+        let category = document.getElementById("category").value.trim();
+        let amount = Number(document.getElementById("amount").value);
+        let date = document.getElementById("date").value;
+
+        if (type !== "income" && type !== "expense") {
+          alert("INVALID TYPE".toUpperCase());
+          return;
+        }
+
+        if (isNaN(amount) || amount <= 0) {
+          alert("INVALID AMOUNT".toUpperCase());
+          return;
+        }
+
+        if (date === "") {
+          alert("INVALID DATE".toUpperCase());
+          return;
+        }
+
+        if (type === "expense") {
+          amount = -amount;
+        }
+
+        transactions[idCounter] = {
+          id: idCounter,
+          type: type,
+          category: category,
+          amount: amount,
+          date: date,
+        };
+
+        alert("TRANSACTION ADDED SUCCESSFULLY".toUpperCase());
+        idCounter++;
+      }
+
+      function removeTransaction() {
+        let id = Number(document.getElementById("removeId").value);
+
+        if (!transactions[id]) {
+          alert("TRANSACTION NOT FOUND".toUpperCase());
+          return;
+        }
+
+        delete transactions[id];
+        alert("TRANSACTION REMOVED".toUpperCase());
+
+        viewTransactions();
+        calculateBalance();
+      }
+
+      function viewTransactions() {
+        let output = "";
+
+        for (let key in transactions) {
+          let t = transactions[key];
+          output +=
+            "ID: " +
+            t.id +
+            " | " +
+            t.type +
+            " | " +
+            t.category +
+            " | " +
+            t.amount +
+            " | " +
+            t.date +
+            "\n";
+        }
+
+        document.getElementById("result").innerText =
+          output || "NO TRANSACTIONS";
+      }
+
+      function calculateBalance() {
+        let balance = 0;
+
+        for (let key in transactions) {
+          balance += transactions[key].amount;
+        }
+
+        let msg = "BALANCE: " + balance + "\n";
+
+        if (savingsGoal > 0) {
+          let remaining = savingsGoal - balance;
+          if (remaining <= 0) {
+            msg += "SAVINGS GOAL ACHIEVED".toUpperCase();
+          } else {
+            msg += "NEED " + remaining + " MORE TO REACH GOAL";
+          }
+        }
+
+        document.getElementById("result").innerText = msg;
+      }
+
+      function setSavingsGoal() {
+        let goal = Number(document.getElementById("goal").value);
+
+        if (isNaN(goal) || goal <= 0) {
+          alert("INVALID SAVINGS GOAL".toUpperCase());
+          return;
+        }
+
+        savingsGoal = goal;
+        alert("SAVINGS GOAL SET".toUpperCase());
+      }
+
+      function setBudget() {
+        let cat = document.getElementById("budgetCategory").value.trim();
+        let amt = Number(document.getElementById("budgetAmount").value);
+
+        if (cat === "" || isNaN(amt) || amt <= 0) {
+          alert("INVALID BUDGET".toUpperCase());
+          return;
+        }
+
+        budgets[cat] = amt;
+        alert("BUDGET SET".toUpperCase());
+      }
+    </script>
+  </body>
+</html>
