@@ -12,7 +12,7 @@
         text-align: center;
       }
       .box {
-        background-color: #ffffff;
+        background-color: white;
         padding: 15px;
         margin-bottom: 15px;
         border-radius: 6px;
@@ -40,6 +40,12 @@
         margin-top: 10px;
         border-radius: 6px;
         white-space: pre-line;
+      }
+      .btn_card {
+        background-color: rgb(255, 35, 35);
+      }
+      .btn_card:hover {
+        background-color: rgb(201, 1, 1);
       }
     </style>
   </head>
@@ -76,11 +82,16 @@
       <input type="text" id="budgetCategory" placeholder="Category" />
       <input type="number" id="budgetAmount" placeholder="Budget Amount" />
       <button onclick="setBudget()">Set Budget</button>
+      <button onclick="checkSpendingLimit()">Check Budget</button>
     </div>
 
     <div class="box">
-      <button onclick="viewTransactions()">View Transactions</button>
-      <button onclick="calculateBalance()">Calculate Balance</button>
+      <button onclick="viewTransactions()" class="btn_card">
+        View Transactions
+      </button>
+      <button onclick="calculateBalance()" class="btn_card">
+        Calculate Balance
+      </button>
       <div class="output" id="result"></div>
     </div>
 
@@ -97,17 +108,17 @@
         let date = document.getElementById("date").value;
 
         if (type !== "income" && type !== "expense") {
-          alert("INVALID TYPE".toUpperCase());
+          alert("INVALID TYPE");
           return;
         }
 
         if (isNaN(amount) || amount <= 0) {
-          alert("INVALID AMOUNT".toUpperCase());
+          alert("INVALID AMOUNT");
           return;
         }
 
         if (date === "") {
-          alert("INVALID DATE".toUpperCase());
+          alert("INVALID DATE");
           return;
         }
 
@@ -123,7 +134,7 @@
           date: date,
         };
 
-        alert("TRANSACTION ADDED SUCCESSFULLY".toUpperCase());
+        alert("TRANSACTION ADDED SUCCESSFULLY");
         idCounter++;
       }
 
@@ -131,12 +142,12 @@
         let id = Number(document.getElementById("removeId").value);
 
         if (!transactions[id]) {
-          alert("TRANSACTION NOT FOUND".toUpperCase());
+          alert("TRANSACTION NOT FOUND");
           return;
         }
 
         delete transactions[id];
-        alert("TRANSACTION REMOVED".toUpperCase());
+        alert("TRANSACTION REMOVED");
 
         viewTransactions();
         calculateBalance();
@@ -177,7 +188,7 @@
         if (savingsGoal > 0) {
           let remaining = savingsGoal - balance;
           if (remaining <= 0) {
-            msg += "SAVINGS GOAL ACHIEVED".toUpperCase();
+            msg += "SAVINGS GOAL ACHIEVED";
           } else {
             msg += "NEED " + remaining + " MORE TO REACH GOAL";
           }
@@ -190,12 +201,12 @@
         let goal = Number(document.getElementById("goal").value);
 
         if (isNaN(goal) || goal <= 0) {
-          alert("INVALID SAVINGS GOAL".toUpperCase());
+          alert("INVALID SAVINGS GOAL");
           return;
         }
 
         savingsGoal = goal;
-        alert("SAVINGS GOAL SET".toUpperCase());
+        alert("SAVINGS GOAL SET");
       }
 
       function setBudget() {
@@ -203,12 +214,20 @@
         let amt = Number(document.getElementById("budgetAmount").value);
 
         if (cat === "" || isNaN(amt) || amt <= 0) {
-          alert("INVALID BUDGET".toUpperCase());
+          alert("INVALID BUDGET");
           return;
         }
 
         budgets[cat] = amt;
-        alert("BUDGET SET".toUpperCase());
+        alert("BUDGET SET");
+      }
+      function checkSpendingLimit() {
+        let category = document.getElementById("budgetCategory").value.trim();
+
+        if (!budgets[category]) {
+          alert("NO BUDGET SET FOR THIS CATEGORY");
+          return;
+        }
       }
     </script>
   </body>
