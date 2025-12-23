@@ -224,10 +224,41 @@
       function checkSpendingLimit() {
         let category = document.getElementById("budgetCategory").value.trim();
 
+        if (category === "") {
+          alert("PLEASE ENTER A CATEGORY");
+          return;
+        }
+
         if (!budgets[category]) {
           alert("NO BUDGET SET FOR THIS CATEGORY");
           return;
         }
+
+        let totalSpent = 0;
+
+        for (let key in transactions) {
+          let t = transactions[key];
+
+          if (t.category === category && t.type === "expense") {
+            totalSpent += Math.abs(t.amount);
+          }
+        }
+
+        let budgetLimit = budgets[category];
+        let remaining = budgetLimit - totalSpent;
+
+        let message =
+          remaining >= 0
+            ? "WITHIN BUDGET\nSpent: " +
+              totalSpent +
+              "\nRemaining: " +
+              remaining
+            : "BUDGET EXCEEDED\nSpent: " +
+              totalSpent +
+              "\nExceeded by: " +
+              Math.abs(remaining);
+
+        document.getElementById("result").innerText = message;
       }
     </script>
   </body>
