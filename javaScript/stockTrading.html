@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>stockTrading</title>
+
+  <style>
+    body {
+      background: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .info div {
+      background: #eef2f5;
+      padding: 10px;
+      border-radius: 6px;
+      width: 30%;
+      text-align: center;
+    }
+
+    .stock-list table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    .stock-list th, .stock-list td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .stock-list th {
+      background: #007bff;
+      color: #fff;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    select, input {
+      padding: 8px;
+      width: 200px;
+    }
+
+    button {
+      padding: 8px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .buy {
+      background: #28a745;
+      color: white;
+    }
+
+    .sell {
+      background: #dc3545;
+      color: white;
+    }
+
+    .portfolio {
+      background: #eef2f5;
+      padding: 15px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Stock Trading </h1>
+
+
+  <div class="info">
+    <div>
+      <h3>Balance</h3>
+      <p id="balance">$1000</p>
+    </div>
+    <div>
+      <h3>Portfolio Value</h3>
+      <p id="portfolioValue">$0</p>
+    </div>
+    <div>
+      <h3>Total Assets</h3>
+      <p id="totalAssets">$1000</p>
+    </div>
+  </div>
+
+  <div class="stock-list">
+    <table>
+      <thead>
+        <tr>
+          <th>Stock</th>
+          <th>Price ($)</th>
+          <th>Owned Shares</th>
+        </tr>
+      </thead>
+      <tbody id="stockTable"></tbody>
+    </table>
+  </div>
+
+ 
+  <div class="controls">
+    <select id="stockSelect"></select>
+    <input type="number" id="shares" placeholder="Number of shares" min="1">
+    <button class="buy" onclick="buyStock()">Buy</button>
+    <button class="sell" onclick="sellStock()">Sell</button>
+  </div>
+
+
+  <div class="portfolio">
+    <h3>Your Portfolio</h3>
+    <ul id="portfolioList"></ul>
+  </div>
+</div>
+
+<script>
+  let balance = 1000;
+
+  let stocks = {
+    "Stock A": { price: getRandomPrice(), shares: 0 },
+    "Stock B": { price: getRandomPrice(), shares: 0 },
+    "Stock C": { price: getRandomPrice(), shares: 0 }
+  };
+
+  function getRandomPrice() {
+    return Math.floor(Math.random() * 80) + 20; 
+  }
+
+  function updatePrices() {
+    for (let stock in stocks) {
+      let change = Math.floor(Math.random() * 11) - 5;
+      stocks[stock].price = Math.max(1, stocks[stock].price + change);
+    }
+  }
+
+  function updateDisplay() {
+    document.getElementById("balance").innerText = `$${balance}`;
+
+    let tableHTML = "";
+    let portfolioHTML = "";
+    let portfolioValue = 0;
+
+    for (let stock in stocks) {
+      let stockValue = stocks[stock].shares * stocks[stock].price;
+      portfolioValue += stockValue;
+
+      tableHTML += `
+        <tr>
+          <td>${stock}</td>
+          <td>$${stocks[stock].price}</td>
+          <td>${stocks[stock].shares}</td>
+        </tr>
+      `;
+
+      if (stocks[stock].shares > 0) {
+        portfolioHTML += `<li>${stock}: ${stocks[stock].shares} shares</li>`;
+      }
+    }
+    document.getElementById("stockTable").innerHTML = tableHTML;
+    document.getElementById("portfolioList").innerHTML =
+      portfolioHTML || "<li>No stocks owned</li>";
+
+    document.getElementById("portfolioValue").innerText = `$${portfolioValue}`;
+    document.getElementById("totalAssets").innerText = `$${balance + portfolioValue}`;
+  }
+  function buyStock() {
+    let stockName = document.getElementById("stockSelect").value;
+    let shares = Number(document.getElementById("shares").value);
+
+    if (shares <= 0) {
+      alert("Enter valid shares");
+      return;
+    }
+
+    let totalCost = shares * stocks[stockName].price;
+
+    if (totalCost > balance) {
+      alert("Not enough balance");
+      return;
+    }
+
+    balance -= totalCost;
+    stocks[stockName].shares += shares;
+
+    updatePrices();
+    updateDisplay();
+  }
+  function sellStock() {
+    let stockName = document.getElementById("stockSelect").value;
+    let shares = Number(document.getElementById("shares").value);
+
+    if (shares <= 0) {
+      alert("Enter valid shares");
+      return;
+    }
+
+    if (shares > stocks[stockName].shares) {
+      alert("Not enough shares");
+      return;
+    }
+
+    balance += shares * stocks[stockName].price;
+    stocks[stockName].shares -= shares;
+
+    updatePrices();
+    updateDisplay();
+  }
+  function init() {
+    let select = document.getElementById("stockSelect");
+
+    for (let stock in stocks) {
+      let option = document.createElement("option");
+      option.value = stock;
+      option.text = stock;
+      select.appendChild(option);
+    }
+
+    updateDisplay();
+  }
+
+  init();
+</script>
+
+</body>
+</html>

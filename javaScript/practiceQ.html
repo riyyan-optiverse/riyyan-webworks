@@ -94,7 +94,7 @@
       person.city = "karachi";
       console.log(person.city);  */
 
-      let mlu = document.getElementById("glu");
+   /*   let mlu = document.getElementById("glu");
       console.log(mlu.innerText);
       mlu.innerHTML = "<i>ayo wsp</i>";
       mlu.style.color = "red";
@@ -107,8 +107,19 @@
  });
  btn.addEventListener("click" , function() {
  console.log("buttonn is clicked!!")
- });
+ });  */
+
+ let person = {
+    
+     firstName : "riyyan",
+     lastName : "mirani",
+     fullName : function () {
+     return `My name is ${this.firstName} ${this.lastName}`;
+     }
+     
+ }
+ console.log(person.fullName());
 
     </script>
   </body>
-</html>
+</html
