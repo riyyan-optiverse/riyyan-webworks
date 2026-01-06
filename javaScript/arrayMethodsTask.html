@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Method Task</title>
+    <style>
+      body {
+        background-color: #f3f4f6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+      }
+      .box {
+        background: white;
+        padding: 20px 25px;
+        width: 420px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+       h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+      button {
+       width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background:blue;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 15px;
+      }
+       button:hover {
+      background:rgb(0, 0, 171);
+    }
+     .output {
+      background: #e5e7eb;
+      padding: 12px;
+      border-radius: 6px;
+      white-space: pre-line;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h2>Array Methods Task</h2>
+      <button onclick="showMethods()">Show Methods</button>
+      <div class="output" id="result">
+    Click button to see Ouput!
+    </div>
+    </div>
+    <script>
+        function showMethods() {
+            let data = [3, 8, 15, 8, 20, 25, 15]; 
+            let backup = [3, 8, 15, 8, 20, 25, 15];
+
+            data.pop();
+
+            data.unshift(100);
+
+            let first15Index = data.indexOf(15);
+
+           data[first15Index] = 50;
+
+            data.shift();
+
+            data.push(200);
+
+            document.getElementById("result").textContent = 
+            "Final Data Array: " + JSON.stringify(data) + "\n\n" +
+            "First 15 Index: " + first15Index + "\n\n" +
+            "Backup Array: " + JSON.stringify(backup);
+        }
+    </script>
+  </body>
+</html>
