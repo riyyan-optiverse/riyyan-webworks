@@ -50,13 +50,13 @@
       <h2>Array Methods Task</h2>
       <button onclick="showMethods()">Show Methods</button>
       <div class="output" id="result">
-    Click button to see Ouput!
+    
     </div>
     </div>
     <script>
         function showMethods() {
             let data = [3, 8, 15, 8, 20, 25, 15]; 
-            let backup = [3, 8, 15, 8, 20, 25, 15];
+            let backup = [...data];
 
             data.pop();
 
